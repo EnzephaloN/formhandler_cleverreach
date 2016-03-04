@@ -11,11 +11,11 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_optin {
     langFile.1 = EXT:formhandler_cleverreach/Resources/Private/Language/formhandler.xml
     cssFile.1 = EXT:formhandler_cleverreach/Resources/Public/CSS/styles.css
     
-    additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Formhandler
+    additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Finisher
     
     formValuesPrefix = formhandler
     
-    preProcessors.1.class = Tx_Formhandler_PreProcessor_CleverReach
+    preProcessors.1.class = \svewap\FormhandlerCleverreach\PreProcessor\CleverReach
     
     fillValueMarkersBeforeLangMarkers = 1
 
@@ -32,7 +32,7 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_optin {
     # Validators configuration
     validators {
         1 {
-            class = Tx_Formhandler_Validator_Default
+            class = Validator\Default
             config {
                 fieldConf {
                     firstname {
@@ -75,7 +75,7 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_optin {
     # Finishers configuration
     finishers {
         
-        2.class = Tx_Formhandler_Finisher_Subscribe
+        2.class = \svewap\FormhandlerCleverreach\Finisher\Subscribe
         2.config < plugin.tx_formhandlercleverreach.config
         2.config {
         
@@ -97,7 +97,7 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_optin {
             }
             
         }
-        3.class = Tx_Formhandler_Finisher_SubmittedOK
+        3.class = Finisher\SubmittedOK
         3.config {
             returns = 1
         }

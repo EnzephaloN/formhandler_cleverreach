@@ -1,4 +1,5 @@
 <?php
+namespace svewap\FormhandlerCleverreach\Finisher;
 /***************************************************************
 *  Copyright notice
 *
@@ -29,7 +30,7 @@
  * @package	Tx_Formhandler
  * @subpackage	Finisher
  */
-class Tx_Formhandler_Finisher_Subscribe extends Tx_Formhandler_Finisher_CleverReach {
+class Subscribe extends CleverReach {
 
 	/**
 	 * The main method called by the controller
@@ -72,7 +73,7 @@ class Tx_Formhandler_Finisher_Subscribe extends Tx_Formhandler_Finisher_CleverRe
 		if (!$subscriber_found) {
 			$return = $soap->receiverAdd($this->settings['apiKey'],$this->settings['listId'],$userdata);
 	
-			if ($return->status == Tx_Formhandler_Finisher_CleverReach::STATUS_SUCCESS) {
+			if ($return->status == CleverReach::STATUS_SUCCESS) {
 				$this->utilityFuncs->debugMessage("Subscriber \"".$userdata['email']."\" accepted");
 			} else {
 				$this->utilityFuncs->debugMessage("A problem with the new subscriber: ".(string)$return->message);
@@ -87,7 +88,7 @@ class Tx_Formhandler_Finisher_Subscribe extends Tx_Formhandler_Finisher_CleverRe
 			
 			$return = $soap->formsActivationMail($this->settings['apiKey'],$this->settings['formId'],$userdata['email']);
 			
-			if ($return->status == Tx_Formhandler_Finisher_CleverReach::STATUS_SUCCESS) {
+			if ($return->status == CleverReach::STATUS_SUCCESS) {
 				$this->utilityFuncs->debugMessage("Activation mail sent");
 			} else {
 				$this->utilityFuncs->debugMessage("Activation mail error for \"".$userdata['email']."\": ". $return->message);

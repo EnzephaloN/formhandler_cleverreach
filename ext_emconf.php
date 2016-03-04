@@ -14,9 +14,9 @@ $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Formhandler Cleverreach Newsletter',
 	'description' => 'Provides finishers and validators for using the cleverreach API. It comes with many examples and can be directly used without modification.',
 	'category' => 'plugin',
-	'author' => 'Sven Wappler',
-	'author_email' => 'typo3@wapplersystems.de',
-	'author_company' => 'WapplerSystems',
+	'author' => 'Sven Wappler, Johannes C. Schulz',
+	'author_email' => 'typo3@wapplersystems.de, info@enzephalon.de',
+	'author_company' => 'WapplerSystems, EnzephaloN IT-Solutions',
 	'shy' => '',
 	'priority' => '',
 	'module' => '',
@@ -27,11 +27,11 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '1.2.6',
+	'version' => '2.0.1',
 	'constraints' => array(
 		'depends' => array(
-			'formhandler' => '1.0.0-2.9.99',
-			'typo3' => '4.5.0-6.2.99',
+			'formhandler' => '2.1.0-2.2.99',
+			'typo3' => '6.2.0-7.6.99',
 		),
 		'conflicts' => array(
 		),

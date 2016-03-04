@@ -1,4 +1,5 @@
 <?php
+namespace svewap\FormhandlerCleverreach\Finisher;
 /***************************************************************
 *  Copyright notice
 *
@@ -29,7 +30,7 @@
  * @package	Tx_Formhandler
  * @subpackage	Finisher
  */
-class Tx_Formhandler_Finisher_Unsubscribe extends Tx_Formhandler_Finisher_CleverReach {
+class Unsubscribe extends _CleverReach {
 
 	/**
 	 * The main method called by the controller
@@ -61,7 +62,7 @@ class Tx_Formhandler_Finisher_Unsubscribe extends Tx_Formhandler_Finisher_Clever
 				$return = $soap->receiverSetInactive($this->settings['apiKey'],$this->settings['listId'],$userdata['email']);
 			}
 			
-			if ($return->status == Tx_Formhandler_Finisher_CleverReach::STATUS_SUCCESS) {
+			if ($return->status == CleverReach::STATUS_SUCCESS) {
 				$this->utilityFuncs->debugMessage("User removed successfully");
 			} else {
 				$this->utilityFuncs->debugMessage("Error at removing \"".$userdata['email']."\": ". $return->message);
@@ -71,7 +72,7 @@ class Tx_Formhandler_Finisher_Unsubscribe extends Tx_Formhandler_Finisher_Clever
 			
 			$return = $soap->formsUnsubscribeMail($this->settings['apiKey'],$this->settings['formId'],$userdata['email']);
 			
-			if ($return->status == Tx_Formhandler_Finisher_CleverReach::STATUS_SUCCESS) {
+			if ($return->status == CleverReach::STATUS_SUCCESS) {
 				$this->utilityFuncs->debugMessage("Unsubscribe mail sent");
 			} else {
 				$this->utilityFuncs->debugMessage("Unsubscription error for \"".$userdata['email']."\": ". $return->message);

@@ -1,4 +1,5 @@
 <?php
+namespace svewap\FormhandlerCleverreach\Validator\ErrorCheck;
 /***************************************************************
 *  Copyright notice
 *
@@ -24,22 +25,29 @@
 ***************************************************************/
 
 /**
+ * Checks if the email is in cleverreach database
  *
  * @author	Sven Wappler <typo3@wapplersystems.de>
  * @package	Tx_Formhandler
  * @subpackage	ErrorChecks
  */
-class Tx_Formhandler_ErrorCheck_Cleverreachemailoptin extends Tx_Formhandler_ErrorCheck_Cleverreachemail {
+class Cleverreachemail extends \Typoheads\Formhandler\Validator\ErrorCheck\AbstractErrorCheck {
+
+	protected $subscriber_found = FALSE;
+	
+	protected $subscriber_active = FALSE;
 
 	public function check() {
-		$checkFailed = parent::check();
-		if ($checkFailed != '') return $checkFailed;
+		$checkFailed = '';
 		
-		if ($this->subscriber_found && $this->subscriber_active) {
-			// ups, schon in der liste drin
-			
-			$checkFailed = $this->getCheckFailed();
-		}
+		$soap = new SoapClient($this->settings['params']['config.']['wsdlUrl']);
+		
+		$return = $soap->receiverGetByEmail($this->settings['params']['config.']['apiKey'], $this->settings['params']['config.']['listId'], trim($this->gp[$this->formFieldName]),0);
+		if ($return->statuscode == 1) return "apikey";
+		
+		$this->subscriber_active = $return->data->active;
+		
+		$this->subscriber_found = ($return->status == \svewap\FormhandlerCleverreach\Finisher\CleverReach::STATUS_SUCCESS);
 		
 		return $checkFailed;
 	}
