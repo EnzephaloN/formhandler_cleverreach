@@ -30,7 +30,7 @@ namespace svewap\FormhandlerCleverreach\Finisher;
  * @package	Tx_Formhandler
  * @subpackage	Finisher
  */
-class Subscribe extends CleverReach {
+class Subscribe extends Cleverreach {
 
 	/**
 	 * The main method called by the controller
@@ -73,7 +73,7 @@ class Subscribe extends CleverReach {
 		if (!$subscriber_found) {
 			$return = $soap->receiverAdd($this->settings['apiKey'],$this->settings['listId'],$userdata);
 	
-			if ($return->status == CleverReach::STATUS_SUCCESS) {
+			if ($return->status == Cleverreach::STATUS_SUCCESS) {
 				$this->utilityFuncs->debugMessage("Subscriber \"".$userdata['email']."\" accepted");
 			} else {
 				$this->utilityFuncs->debugMessage("A problem with the new subscriber: ".(string)$return->message);
@@ -88,7 +88,7 @@ class Subscribe extends CleverReach {
 			
 			$return = $soap->formsActivationMail($this->settings['apiKey'],$this->settings['formId'],$userdata['email']);
 			
-			if ($return->status == CleverReach::STATUS_SUCCESS) {
+			if ($return->status == Cleverreach::STATUS_SUCCESS) {
 				$this->utilityFuncs->debugMessage("Activation mail sent");
 			} else {
 				$this->utilityFuncs->debugMessage("Activation mail error for \"".$userdata['email']."\": ". $return->message);

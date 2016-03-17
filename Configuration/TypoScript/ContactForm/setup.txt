@@ -24,7 +24,7 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_contact {
     
     additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Finisher
     
-    preProcessors.1.class = \svewap\FormhandlerCleverreach\PreProcessor\CleverReach
+    preProcessors.1.class = \svewap\FormhandlerCleverreach\PreProcessor\Cleverreach
     
     formValuesPrefix = formhandler
     

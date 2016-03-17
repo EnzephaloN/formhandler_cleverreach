@@ -47,7 +47,7 @@ class Cleverreachemail extends \Typoheads\Formhandler\Validator\ErrorCheck\Abstr
 		
 		$this->subscriber_active = $return->data->active;
 		
-		$this->subscriber_found = ($return->status == \svewap\FormhandlerCleverreach\Finisher\CleverReach::STATUS_SUCCESS);
+		$this->subscriber_found = ($return->status == \svewap\FormhandlerCleverreach\Finisher\Cleverreach::STATUS_SUCCESS);
 		
 		return $checkFailed;
 	}

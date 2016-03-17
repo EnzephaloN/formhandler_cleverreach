@@ -15,7 +15,7 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_doubeoptout {
     
     formValuesPrefix = formhandler
     
-    preProcessors.1.class = \svewap\FormhandlerCleverreach\PreProcessor\CleverReach
+    preProcessors.1.class = \svewap\FormhandlerCleverreach\PreProcessor\Cleverreach
     
     fillValueMarkersBeforeLangMarkers = 1
 
