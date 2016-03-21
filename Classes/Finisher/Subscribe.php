@@ -50,7 +50,7 @@ class Subscribe extends Cleverreach {
 	 */
 	protected function addReceiver() {
 
-		$soap = new SoapClient($this->settings['wsdlUrl']);
+		$soap = new \SoapClient($this->settings['wsdlUrl']);
 		
 		$userdata = array();
 		

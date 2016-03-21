@@ -50,7 +50,7 @@ class Unsubscribe extends Cleverreach {
 	 */
 	protected function removeReceiver() {
 
-		$soap = new SoapClient($this->settings['wsdlUrl']);
+		$soap = new \SoapClient($this->settings['wsdlUrl']);
 		$userdata = $this->parseFields('fields.');
 		
 		
