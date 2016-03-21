@@ -39,6 +39,8 @@
 			<label index="error_interests_required">Select some interests!</label>
 			<label index="error_email_required">Enter your E-mail address!</label>
 			<label index="error_email_email">E-mail address must be valid syntax!</label>
+                        <label index="error_email_typoheads\override\validator\errorcheck\cleverreachemailoptin">E-mail already registered!</label>
+                        <label index="error_email_typoheads\override\validator\errorcheck\cleverreachemailoptout">E-mail not found!</label>
 			<label index="error_email_apikey">Wrong API key!</label>
 			<label index="error_contact_via_required">Please select how to contact You!</label>
 			<label index="mandatory">Fields marked with * are required!</label>
