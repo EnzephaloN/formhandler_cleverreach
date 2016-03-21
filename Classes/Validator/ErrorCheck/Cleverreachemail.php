@@ -57,7 +57,7 @@ class Cleverreachemail extends \Typoheads\Formhandler\Validator\ErrorCheck\Abstr
     }
 
     protected function getCheckFailed() {
-        $this->settings['check'] = 'cleverreachemail';
+        $this->settings['check'] = \TYPO3\CMS\Core\Utility\GeneralUtility::getClassName($this);
         return parent::getCheckFailed();
     }
 
