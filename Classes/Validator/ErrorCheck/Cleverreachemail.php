@@ -41,9 +41,9 @@ class Cleverreachemail extends \Typoheads\Formhandler\Validator\ErrorCheck\Abstr
     public function check() {
         $checkFailed = '';
 
-        $soap = new \SoapClient($this->settings['params']['config']['wsdlUrl']);
-
-        $return = $soap->receiverGetByEmail($this->settings['params']['config']['apiKey'], $this->settings['params']['config']['listId'], trim($this->gp[$this->formFieldName]), 0);
+        $soap = new \SoapClient($this->settings['params']['config.']['wsdlUrl']);
+var_dump($soap);
+        $return = $soap->receiverGetByEmail($this->settings['params']['config.']['apiKey'], $this->settings['params']['config.']['listId'], trim($this->gp[$this->formFieldName]), 0);
         if ($return->statuscode == 1)
             return "apikey";
 var_dump($return);
