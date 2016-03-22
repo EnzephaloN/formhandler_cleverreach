@@ -54,12 +54,6 @@ class Cleverreachemail extends \Typoheads\Formhandler\Validator\ErrorCheck\Abstr
         return $checkFailed;
     }
 
-    /*protected function getCheckFailed() {
-        $parts = explode('\\',get_class($this));
-        $this->settings['check'] = strtolower(array_pop($parts));
-        return parent::getCheckFailed();
-    }*/
-
 }
 
 ?>
