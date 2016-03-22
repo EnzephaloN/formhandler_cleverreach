@@ -46,7 +46,7 @@ class Cleverreachemail extends \Typoheads\Formhandler\Validator\ErrorCheck\Abstr
         $return = $soap->receiverGetByEmail($this->settings['params']['config.']['apiKey'], $this->settings['params']['config.']['listId'], trim($this->gp[$this->formFieldName]), 0);
         if ($return->statuscode == 1)
             return "apikey";
-
+var_dump($return);
         $this->subscriber_active = $return->data->active;
 
         $this->subscriber_found = ($return->status == \svewap\FormhandlerCleverreach\Finisher\Cleverreach::STATUS_SUCCESS);
