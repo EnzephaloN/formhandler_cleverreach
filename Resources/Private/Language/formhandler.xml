@@ -39,8 +39,9 @@
 			<label index="error_interests_required">Select some interests!</label>
 			<label index="error_email_required">Enter your E-mail address!</label>
 			<label index="error_email_email">E-mail address must be valid syntax!</label>
-                        <label index="error_email_typoheads\override\validator\errorcheck\cleverreachemailoptin">E-mail already registered!</label>
-                        <label index="error_email_typoheads\override\validator\errorcheck\cleverreachemailoptout">E-mail not found!</label>
+                        <label index="error_email_cleverreachemail">Unknown error from Cleverreach.</label>
+                        <label index="error_email_cleverreachemailoptin">E-mail already registered!</label>
+                        <label index="error_email_cleverreachemailoptout">E-mail not found!</label>
 			<label index="error_email_apikey">Wrong API key!</label>
 			<label index="error_contact_via_required">Please select how to contact You!</label>
 			<label index="mandatory">Fields marked with * are required!</label>
@@ -94,7 +95,7 @@
 			<label index="error_country_required">Land ist nicht ausgefüllt!</label>
 			<label index="error_email_email">E-Mailadresse ist ungültig!</label>
 			<label index="mandatory">Felder mit * sind Pflichtfelder!</label>
-			
+			<label index="error_email_cleverreachemail">Unbekannter Fehler von Cleverreach.</label>
 			<label index="error_email_cleverreachemailoptin">E-Mailadresse ist schon registriert!</label>
 			<label index="error_email_cleverreachemailoptout">E-Mailadresse ist nicht im Newsletter-System registriert.</label>
 						

@@ -97,9 +97,6 @@ class Subscribe extends Cleverreach {
 			
 		}
 
-
 	}
-
-
 
 }
