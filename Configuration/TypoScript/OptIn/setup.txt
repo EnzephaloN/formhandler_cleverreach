@@ -48,7 +48,7 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_optin {
                     email {
                         errorCheck.1 = required
                         errorCheck.2 = email
-                        errorCheck.3 = cleverreachemailoptin
+                        errorCheck.3 = \svewap\FormhandlerCleverreach\Validator\ErrorCheck\Cleverreachemailoptin
                         errorCheck.3.config < plugin.tx_formhandlercleverreach.config
                     }
                     
