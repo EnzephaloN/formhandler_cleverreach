@@ -54,11 +54,11 @@ var_dump($return);
         return $checkFailed;
     }
 
-    protected function getCheckFailed() {
+    /*protected function getCheckFailed() {
         $parts = explode('\\',get_class($this));
         $this->settings['check'] = strtolower(array_pop($parts));
         return parent::getCheckFailed();
-    }
+    }*/
 
 }
 
