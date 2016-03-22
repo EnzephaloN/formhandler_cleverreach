@@ -51,7 +51,7 @@ var_dump($return);
 
         $this->subscriber_found = ($return->status == \svewap\FormhandlerCleverreach\Finisher\Cleverreach::STATUS_SUCCESS);
 
-        $checkFailed = $this->getCheckFailed();
+        //$checkFailed = $this->getCheckFailed();
         
         return $checkFailed;
     }
