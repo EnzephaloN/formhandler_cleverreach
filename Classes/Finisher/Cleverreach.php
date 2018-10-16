@@ -291,7 +291,7 @@ class Cleverreach extends \Typoheads\Formhandler\Finisher\AbstractFinisher {
 			} else {
 				$langMarkers = $this->utilityFuncs->getFilledLangMarkers($value,$this->langFile);
 				if (!empty($langMarkers)) {
-					$value = $this->cObj->substituteMarkerArray($value,$langMarkers);
+                                        $value = \TYPO3\CMS\Core\Service\MarkerBasedTemplateService::substitudeMarkerArray($value, $langMarkers);
 				}
 			}
 		}
